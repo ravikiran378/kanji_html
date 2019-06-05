@@ -1,0 +1,138 @@
+<html>
+<head>
+	<script>
+	var speed = "5000";
+	var lessonData  = [];
+	var choosenData = [];
+	 
+	function prepareData(){
+		//lesson 1
+		lessonData[lessonData.length] = "住む,住民,所,住所,台所,場所,東京,東京都,都合がいい,首都,東京府,大阪府,政府,県,山口県,県知事,京都市,市長,市場,北区,文京区,区長,町,下町,町長,村,村人,村長";
+		//lesson 2
+		lessonData[lessonData.length] = "明るい,明日,説明,発明,暗い,暗号,遠い,遠足,近い,近所,最近,強い,勉強,強風,弱い,強弱,重い,重大な,体重,軽い,軽食,太い,太陽,細い,細かい,細工";
+		//lesson 3
+		lessonData[lessonData.length] = "Lesson Not Loaded";
+		//lesson 4
+		lessonData[lessonData.length] = "Lesson Not Loaded";
+		//lesson 5
+		lessonData[lessonData.length] = "Lesson Not Loaded";
+		//lesson 6
+		lessonData[lessonData.length] = "仕える,仕事,事,火事,用事,大事な,銀,銀行,会社員,銀行員,店員,会員,医者,医学,医院,者,歯医者,学者,作者,働く,屋,本屋,屋上,八百屋,部屋,産,産む,生産する,財産,産,産業,工業";
+		//lesson 7
+		lessonData[lessonData.length] = "林,小林さん,林道,森,森さん,新林,地,地図,地下鉄,土地,地震,池,電池,海,海外,北海道,西洋,東洋,洋服,大西洋,雪,大雪,新雪,光,光る,日光,観光,台,台所,土台,風,台風,洋風,風景";
+		//lesson 8
+		lessonData[lessonData.length] = "季,四季,節,季節,節分,春,青春,夏,夏休み,夏まつり,夏服,秋,秋田県,秋分の日,冬,冬休み,春夏秋冬,暑い,残暑,寒い,寒波,暖かい,暖冬,暖房,温暖化,涼しい,涼風";
+		//lesson 9
+		lessonData[lessonData.length] = "体,体力,体重,頭,頭がいい,頭痛,顔,顔色,首,首都,手首,首相,心,安心する,心配する,中心,声,大声,病気,病院,病人,急病,薬,目薬,薬品,科学,教科書,外科,内側,内科,車内,案内する";
+		//lesson 10
+		lessonData[lessonData.length] = "朝,今朝,朝日,朝食,昼,昼休み,昼ご飯,昼食,夜,今夜,夜店,夜食,夕日,夕食,七夕,読み方,夕方,あの方,方法,今晩,毎晩,晩御飯,時計,計画,計る,合計,日曜日,水曜日,何曜日,以上,以下,以外,以前,一度,今度,25度,温度";
+		//lesson 11
+		lessonData[lessonData.length] = "止まる,中止する,一時停止,歩く,散歩する,進歩する,横断歩道,走る,力走する,起きる,早起き,起業家,持つ,気持ち,持ち物,支持する,待つ,待ち合わせ,招待する,期待する,借りる,借金,貸す,貸家,賃貸マンション,始める,開始する,始発,終わる,終電,最終回";
+		//lesson 12
+		lessonData[lessonData.length] = "家,画家,家内,家庭,家族,民族,水族館,私,私立大学,私生活,自分,自動ドア,自由,自然,親,母親,父親,親切な,親しい,両親,両方,両手,両替え,兄,お兄さん,弟,兄弟,姉,お姉さん,妹,姉妹,姉妹都市";
+		//lesson 13
+		lessonData[lessonData.length] = "生活,活動,活発な,回​す,一回,前回,回転寿司,主人,主食,主な,持ち主,色,茶色 ,形,人形 ,正方形,図形,品物,食料品,食料品店,電気製品,作品,国民,市民,民族,民主主義,服,洋服,和服,制服,犬,子犬,日本犬,同じ,同時に,同級生";
+		//lesson 14
+		lessonData[lessonData.length] = "米,米国,白米,料金 ,食料品,食料品店,資料,材料,料理,地理,無理な,理由,肉,牛肉,豚肉,鶏肉-Chicken,鳥,小鳥,白鳥,野原,野鳥,分野,野菜,菜食,青菜,お茶,茶色,喫茶店,紅茶,ご飯,夕飯,晩御飯/晩ご飯,昼飯,味,意味,趣味,興味";
+		//lesson 15
+		lessonData[lessonData.length] = "代わる,代わりに,時代,ガス代,使う,大使館,使用中,作る,作文,作家,作業,変化する,文化,化学,映画化,信じる,信号,自信,通信,進む,進歩,先進国,送る,送金,放送,送信,返す,返事,返信,繰り返す,洗う,手洗い,お手洗い,洗濯,注ぐ,注意する,注文する,注射";
+		//lesson 16
+		lessonData[lessonData.length] = "場所,工場,広場,運動場,建てる,建物,建築,物,買い物,動物,荷物,病院,入院する,大学院,映画館,大使館,旅館,美術館,食堂,講堂,教室,地下室,待合室,事務室,工場,工事,工業,工作,図,地図,図書館,合図,信号,電話番号,三号室,号令";
+		//lesson 17
+		lessonData[lessonData.length] = "交通,交差点,交番,交代,通る,通う,通学,大通り,動く,運動,自動車,動物,乗る,タクシー乗り場,乗車券,降りる,降る,乗り降り,降雨量,運ぶ,運動,運がいい,運賃,転がる,運転する,自転車,回転,転勤,帰る,帰国する,お帰りなさい,出発する,発見,発明,発車,着る,着く,着物,着信（メイル）";
+		//lesson 18
+		lessonData[lessonData.length] = "漢字,漢方薬,字,活字,習字,文,文学,文字,注文する,教える,教室,教科書,教会,勉強する,習う,練習,復習する,習慣,英語,英国,英雄,考える,考古学,参考書,研究する,研究者,研究室";
+		//lesson 19
+		lessonData[lessonData.length] = "Lesson Not Loaded";
+		//lesson 20
+		lessonData[lessonData.length] = "Lesson Not Loaded";
+		
+		choosenData[choosenData.length] = 0;
+		choosenData[choosenData.length] = 1;
+	}
+	function updateSpeed(val){
+		speed = val;
+		clearInterval(kickFunRef);
+		kick();
+		kickFunRef = setInterval(kick, speed);
+	}
+	function setLessonScope(){
+		clearInterval(kickFunRef);
+		var checkboxes = document.getElementsByName("Lesson");
+		choosenData = [];
+		for(var i = 0; i < checkboxes.length; i++)  
+		{  
+			if(checkboxes[i].checked){
+				choosenData[choosenData.length] = i;
+			}
+		}
+		kick();
+		kickFunRef = setInterval(kick, speed);
+	}
+	function kick(){
+			var randomLession = getRandomInt(0,choosenData.length-1);
+			var randomKanjiWord = getRandomInt(0, lessonData[choosenData[randomLession]].split(",").length-1);
+			document.getElementById("flashArea").innerHTML = wrapWithSpan(lessonData[choosenData[randomLession]].split(",")[randomKanjiWord])+"Lesson "+(choosenData[randomLession]+1)+" - "+(randomKanjiWord+1)+" of "+lessonData[choosenData[randomLession]].split(",").length+". Falshing at speed of "+(speed/1000)+" Seconds"
+	}
+	var kickFunRef = null;
+	function getRandomInt(min, max) {
+		return +Math.floor(Math.random() * (max - min + 1)) + +min;
+	}
+	function wrapWithSpan(str){
+		//#dcdadb
+		return "<span style='font-size:150px;color:#2E8B57;'>"+str+"</span><br>"
+	}
+	</script>
+</head>
+<body onload="prepareData(); kick();kickFunRef = setInterval(kick, 5000);">
+	<table style="width:100%;">
+		<tr>
+			<td style="text-align:left;   width:10%"></td>
+			<td style="text-align:center; width:75%"></td>
+			<td style="text-align:right;  width:15%">Speed : <select onchange="updateSpeed(this.value);">
+				<option value="1000">Very Fast</option>
+				<option value="2000">Fast</option>
+				<option value="5000" selected>Required</option>
+				<option value="10000">Learner</option>
+				<option value="20000">Beginner</option>
+				</select>
+			</td>
+		</tr>
+		
+		<tr>
+			<td style="text-align:center; width:5%">
+				<fieldset>      
+					<legend>Choose Lession</legend>
+					<input type="checkbox" name="Lesson" value="1" onchange="setLessonScope();" checked>Lesson 01<br> 
+					<input type="checkbox" name="Lesson" value="2" onchange="setLessonScope();" checked>Lesson 02<br>
+					<input type="checkbox" name="Lesson" value="3" onchange="setLessonScope();" disabled>Lesson 03<br> 
+					<input type="checkbox" name="Lesson" value="4" onchange="setLessonScope();" disabled>Lesson 04<br> 
+					<input type="checkbox" name="Lesson" value="5" onchange="setLessonScope();" disabled>Lesson 05<br> 
+					<input type="checkbox" name="Lesson" value="6" onchange="setLessonScope();">Lesson 06<br> 
+					<input type="checkbox" name="Lesson" value="7" onchange="setLessonScope();">Lesson 07<br> 
+					<input type="checkbox" name="Lesson" value="8" onchange="setLessonScope();">Lesson 08<br> 
+					<input type="checkbox" name="Lesson" value="9" onchange="setLessonScope();">Lesson 09<br> 
+					<input type="checkbox" name="Lesson" value="10" onchange="setLessonScope();">Lesson 10<br> 
+					<input type="checkbox" name="Lesson" value="11" onchange="setLessonScope();">Lesson 11<br> 
+					<input type="checkbox" name="Lesson" value="12" onchange="setLessonScope();">Lesson 12<br> 
+					<input type="checkbox" name="Lesson" value="13" onchange="setLessonScope();">Lesson 13<br> 
+					<input type="checkbox" name="Lesson" value="14" onchange="setLessonScope();">Lesson 14<br> 
+					<input type="checkbox" name="Lesson" value="15" onchange="setLessonScope();">Lesson 15<br> 
+					<input type="checkbox" name="Lesson" value="16" onchange="setLessonScope();">Lesson 16<br> 
+					<input type="checkbox" name="Lesson" value="17" onchange="setLessonScope();">Lesson 17<br> 
+					<input type="checkbox" name="Lesson" value="18" onchange="setLessonScope();">Lesson 18<br> 
+					<input type="checkbox" name="Lesson" value="19" onchange="setLessonScope();" disabled>Lesson 19<br> 
+					<input type="checkbox" name="Lesson" value="20" onchange="setLessonScope();" disabled>Lesson 20<br>      
+				</fieldset>   
+			</td>
+			<td style="text-align:right;">
+				<div id="flashArea" style="margin: auto;">
+				</div>
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
