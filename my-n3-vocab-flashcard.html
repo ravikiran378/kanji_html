@@ -1,0 +1,277 @@
+<html>
+  <head>
+    <script>
+    var arr = [];
+    class Entry {
+      constructor(entryId, entryWord, entryList) {
+        this.entryId = entryId;
+        this.entryWord = entryWord;
+        this.entryList = entryList;
+      }
+    }
+    function add(entry){
+      arr[arr.length] = entry;
+    }
+
+    function renderEntry(entry){
+      str = '';
+      str+= '<table style="border: solid black; width:100%">';
+      str+= '<tr><th colspan="2" style="border: solid black; ">'+entry.entryId+'</th></tr>';
+      str+= '<tr><th style="border: solid black 1px; font-size:100px;">'+entry.entryWord+'</th></tr>';
+      for(let i=0; i<entry.entryList.length;i++){
+        str+= '<tr><td style="text-align:left;font-size:25px;">'+entry.entryList[i]+'</td></tr>';
+      }
+      str+= '</table></br>';
+      var myDiv = document.getElementById("target-div") ;
+      myDiv.innerHTML += str;
+    }
+
+    function render(){
+      for(let i=0; i< arr.length; i++){
+        renderEntry(arr[i]);
+      }
+    }
+
+    function load() {
+        var entryList = [];
+        /*
+        add(getEntry(
+          'Lesson 1', '整理',
+          '整 - セイ, ととのえる, ととのう, N2 Level',
+          '理 - リ, ことわり N4 Level',
+          '整理, せいり - Organize',
+          '料理, りょうり - cooking',
+          '無理, むり - impossible',
+          '管理, かんり - management/control',
+          '代理, だいり - ????',
+          '理由, りゆう - reason/motive',
+          '理解, りかい - ????/'
+          ));
+        add(getEntry(
+          'Lesson 1', '登',
+          '登る, (のぼ)る - climb',
+          '登がる, (あ)がる - climb [**Ignore]',
+          '登録, とうろく- Register'
+        ));
+        add(getEntry(
+          'Lesson 1', '熔',
+          '熔 - ヨウ, とける, とかす, いがた',
+          '(と)ける ~ 熔ける - melt/fuse',
+          '(と)かす ~ 熔かす - climb',
+          '登録,とうろく - Register',
+          '私は水に塩を溶かす。 - 他動詞',
+          '水に塩が溶ける。- 自動詞'
+        ));
+        add(getEntry(
+              'Lesson 1', '明',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '庭',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '掃除',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '音楽',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '難し',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '曲',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '練習',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '重',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '昼寝',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '留守',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '遊',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '生',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '店員',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '絵',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '素晴らし',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '客',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '相談',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '決め',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '運転免許',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '取って',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '運転',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '病気',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '治',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '激し',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '運動',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '無理',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '間もなく',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '飛び立つ',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '緊張',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '瞬間',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '試験',
+                  ''
+                ));
+        add(getEntry(
+                  'Lesson 1', '鳴った',
+                  ''
+                ));
+        */
+        add(getEntry('Lesson 9','悩み', '悩み, なやみ ~ trouble/worry', '悩む, なやむ ~ to be worried/troubled'));
+        add(getEntry('Lesson 9','書類', '書類, しょるい ~ documents', '種類,しゅるい ~ variety/type', '人類,じんるい ~ mankind/humanity', '分類,ぶんるい ~ classification/categorization'));
+        add(getEntry('Lesson 9','手伝う', '手伝う,てつだう ~ to help'));
+        add(getEntry('Lesson 9','そばに', 'そばに', 'Related: わきに', '* 側 ~ そば'));
+        add(getEntry('Lesson 9','自然環境', '自然環境, しぜんかんきょう ~ Natural Environment.'));
+        add(getEntry('Lesson 9','年を取る', '年を取る ~ Aged'));
+        add(getEntry('Lesson 9','親', '親 ~ Parent'));
+        add(getEntry('Lesson 9','無理', '無理 ~ unreasonable/overdoing'));
+        add(getEntry('Lesson 9','店員', '店員,てんいん ~ salesperson'));
+        add(getEntry('Lesson 9','昼休み', '昼休み ~ Noon break', '昼寝 ~ Nap', '昼ご飯 ~ Lunch'));
+        add(getEntry('Lesson 9','店長', '店長 ~ Store Manager'));
+        add(getEntry('Lesson 9','入館', '入館(にゅうかん) ~ Admission', '入館料 ~ Admission fee', '入場料 ~ entrance fee; admission fee; gate receipts'));
+        add(getEntry('Lesson 9','何度', '何度 ~ Many times', '制度,せいど ~ System/institution/organization'));
+        add(getEntry('Lesson 9','さっき', 'さっき ~ A While Ago/some time ago'));
+        add(getEntry('Lesson 9','説明', '説明 ~ explanation', '表明(ひょうめい) ~ declaration', '**有名 ~ Famous [Kanji rhymes similar]', '不明, ふめい ~ unidentified'));
+        add(getEntry('Lesson 9','文化祭', '文化祭 (ぶんかさい) ~ culture festival  ', '文化 ~ culture', '文書, ぶんしょ ~ Writings/Note', '文学 (ぶんがく)~ Literature', '注文(ちゅうもん) ~ Order', '論文, ろんぶん ~ essay/ article'));
+        add(getEntry('Lesson 9','暑い', '暑い,あつい ~ hot (weather, etc.)', '暑さ,あつさ ~ Hotness', '暑中, しょちゅう~ mid-summer'));
+        add(getEntry('Lesson 9','運動', '運動,うんどう ~ Exercise', '運動場 ~ Playground', '活動,かつどう ~ Activity', '行動,こうどう ~ conduct/behaviour', '自動, じどう ~ automatic', '自動的,じどうてき ~ Automatic', '運転,うんてん ~ Operation/Driving', '運ぶ, はこぶ ~ Move', '運転手,うんてんしゅ ~ Driver'));
+        add(getEntry('Lesson 9','練習', '練習,れんしゅう~ practice', '学習,がくしゅう ~ Study', '習う, ならう~ to learn', '習慣,しゅうかん ~ custom'));
+        add(getEntry('Lesson 9','卒業式', '卒業式, そつぎょうしき ~ graduation ceremony'));
+        add(getEntry('Lesson 9','お別れ', 'お別れ, おわかれ ~ farewell', '特別, とくべつ ~ special', '別, べつ ~ Division', '分ける, 別ける, わける'));
+        add(getEntry('Lesson 9','最近', '最近,さいきん ~ recently/nowadays/right now', '最後,さいご ~ Last/End', '最終, さいしゅう~ last/final/closing', '最終的, さいしゅうてき ~ finally', '最初, さいしょ~ beginning/first', '最も,もっとも ~ Most/ Extremely.', '近代, きんだい ~ modern times/present day'));
+        add(getEntry('Lesson 9','調子', '調子, ちょうし ~ state of health', '調査, ちょうさ~ investigation/examination/survey', '男子,だんし~ youth/Young man', '女子, じょし ~ girl'));
+        add(getEntry('Lesson 9','入学試験', '入学試験, にゅうがくしけん ~ entrance examination', '留学, りゅうがく~ Abroad Study', '医学,いがく~ medical science', '文学, ぶんがく~ literature', '科学,かがく~ science ** Observe 料理 for Kanji difference.', '化学 ~ Chemistry', '数学,すうがく ~ Maths.', '生物学, せいぶつがく~ biology', '試験, しけん ~ Exam', '試合,しあい ~ Match'));
+        add(getEntry('Lesson 9','合格', '合格, ごうかく ~ success/passing/eligibility', '合意, ごうい ~ agreement/mutual understanding', '価格, かかく~ price/value/cost', '性格, せいかく ~ character/nature/personality', '`+ 本格的, ほんかくてき~ genuine/standard/', '格好, かっこう ~ shape/form/appearance', '格好がいい ~ Handsome figure.'));
+        add(getEntry('Lesson 9','疲れ', '疲れ,つかれ ~ tiredness/fatigue', 'お疲れ様,おつかれさま~ much appreciated/thats enough for today', '*疲 vs 度'));
+        add(getEntry('Lesson 9',' 進む', ' 進む, すすむ ~ to advance; to go forward', '気が進まない ~ Dont want to do'));
+        add(getEntry('Lesson 9','引き受ける', '引き受ける, ひきうける ~ to take up ', 'Also: 引き出す, ひきだす ~ to pull out/to withdraw', 'Also: 引き取る, ひきとる~ to take over/to take care of'));
+        add(getEntry('Lesson 9','申込書', '申込書, もうしこみしょ ~ application form/written application', 'Also: 申上げる, もうしあげる ~ to say/to tell/to state'));
+        add(getEntry('Lesson 9','事務', '事務,じむ ~ business/office work', '事件,じけん ~ event/incident/case', '事業, じぎょう/ことわざ ~ project/enterprise/industry', '事実, じじつ ~ fact/truth/reality'));
+        add(getEntry('Lesson 9','書き方', '書き方,かきかた ~ way of writing', 'Also: 読み方, よみかた ~ way of reading'));
+
+        /*
+        var entry = new Entry("01", "整理", entryList);
+        entryList[entryList.length] = '整 - セイ, ととのえる, ととのう, N2 Level';
+        entryList[entryList.length] = '理 - リ, ことわり N4 Level';
+        entryList[entryList.length] = '整理, せいり - Organize';
+        entryList[entryList.length] = '料理, りょうり - cooking';
+        entryList[entryList.length] = '無理, むり - impossible';
+        entryList[entryList.length] = '管理, かんり - management/control';
+        entryList[entryList.length] = '代理, だいり - ????';
+        entryList[entryList.length] = '理由, りゆう - reason/motive';
+        entryList[entryList.length] = '理解, りかい - ????/';
+        add(entry);
+
+        entryList = [];
+        entry = new Entry("02", "登", entryList);
+        addToEntryList(entryList, "(のぼ)る ~ 登る - climb");
+        addToEntryList(entryList, "(あ)がる ~ 登る - climb");
+        addToEntryList(entryList, "登録,とうろく - Register");
+        add(entry);
+
+        entryList = [];
+        entry = new Entry("03", "熔", entryList);
+        addToEntryList(entryList, "熔 - ヨウ, とける, とかす, いがた");
+        addToEntryList(entryList, "(と)ける ~ 熔ける - melt/fuse");
+        addToEntryList(entryList, "(と)かす ~ 熔かす - climb");
+        addToEntryList(entryList, "登録,とうろく - Register");
+        addToEntryList(entryList, "登録,とうろく - Register");
+        addToEntryList(entryList, "私は水に塩を溶かす。 - 他動詞");
+        addToEntryList(entryList, "水に塩が溶ける。- 自動詞");
+        add(entry);
+        */
+    }
+
+    function getEntry(...args){
+       let entryList = [];
+       let entry = new Entry(args[0], args[1], entryList);
+       for(let i=2; i< args.length; i++){
+         entryList[entryList.length] = args[i];
+       }
+       return entry;
+    }
+
+    function addToEntryList(entryList, text){
+      entryList[entryList.length] = text;
+    }
+
+    </script>
+  </head>
+  <body onload="load(); render();">
+    <div id="target-div"></div>
+  </body>
+</html>
