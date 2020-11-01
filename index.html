@@ -1,5 +1,34 @@
 <html>
   <head>
+    <style>
+      table {
+          border-collapse:separate;
+          border:solid black 1px;
+          border-radius:6px;
+          -moz-border-radius:6px;
+      }
+
+      td, th {
+          border-left:solid black 1px;
+          border-top:solid black 1px;
+          -moz-border-radius:6px;
+      }
+
+
+      td {
+         background-color: #FFFFCC;
+      }
+      th {
+          background-color: #33CCCC;
+          border-top: none;
+          font-size:1.5em;
+          text-align: left;
+      }
+
+      td:first-child, th:first-child {
+           border-left: none;
+      }
+    </style>
     <script>
     var arr = [];
     class Entry {
@@ -16,8 +45,8 @@
     function renderEntry(entry){
       str = '';
       str+= '<table style="border: solid black; width:100%">';
-      str+= '<tr><th colspan="2" style="border: solid black; ">'+entry.entryId+'</th></tr>';
-      str+= '<tr><th style="border: solid black 1px; font-size:100px;">'+entry.entryWord+'</th></tr>';
+      //str+= '<tr><th>'+entry.entryId+'</th></tr>';
+      str+= '<tr><th>'+entry.entryWord+'</th></tr>';
       for(let i=0; i<entry.entryList.length;i++){
         str+= '<tr><td style="text-align:left;font-size:25px;">'+entry.entryList[i]+'</td></tr>';
       }
@@ -191,7 +220,7 @@
                   ''
                 ));
         */
-        add(getEntry('Lesson 9','悩み', '悩み, なやみ ~ trouble/worry', '悩む, なやむ ~ to be worried/troubled'));
+        add(getEntry('Lesson 9','悩み', '悩み, (なや)み ~ trouble/worry ~ N2 Level', '悩む, (なや)む ~ to be worried/troubled'));
         add(getEntry('Lesson 9','書類', '書類, しょるい ~ documents', '種類,しゅるい ~ variety/type', '人類,じんるい ~ mankind/humanity', '分類,ぶんるい ~ classification/categorization'));
         add(getEntry('Lesson 9','手伝う', '手伝う,てつだう ~ to help'));
         add(getEntry('Lesson 9','そばに', 'そばに', 'Related: わきに', '* 側 ~ そば'));
@@ -202,7 +231,7 @@
         add(getEntry('Lesson 9','店員', '店員,てんいん ~ salesperson'));
         add(getEntry('Lesson 9','昼休み', '昼休み ~ Noon break', '昼寝 ~ Nap', '昼ご飯 ~ Lunch'));
         add(getEntry('Lesson 9','店長', '店長 ~ Store Manager'));
-        add(getEntry('Lesson 9','入館', '入館(にゅうかん) ~ Admission', '入館料 ~ Admission fee', '入場料 ~ entrance fee; admission fee; gate receipts'));
+        add(getEntry('Lesson 9','入館', '入館(にゅうかん) ~ Admission', '入館料 ~ Admission fee', '入場料 ~ entrance fee; admission fee; gate receipts', ' ☞ 入館料 means admission fee to any types of museums.  The word is used for the places called 博物館(はくぶつかん)、美術館(びじゅつかん)... when they charge fee to use the facilities.  入場料 on the other hand, it also means admission fee in general.'));
         add(getEntry('Lesson 9','何度', '何度 ~ Many times', '制度,せいど ~ System/institution/organization'));
         add(getEntry('Lesson 9','さっき', 'さっき ~ A While Ago/some time ago'));
         add(getEntry('Lesson 9','説明', '説明 ~ explanation', '表明(ひょうめい) ~ declaration', '**有名 ~ Famous [Kanji rhymes similar]', '不明, ふめい ~ unidentified'));
@@ -274,6 +303,7 @@
   <body onload="load(); render();">
     <div id="target-div"></div>
     <pre>
+
     Lesson 9.
 
     だれかに自分の悩みを聞いてもらいたいと思うことがあります。
